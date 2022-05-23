@@ -2,6 +2,8 @@
 A simple theme for showcasing your work, emphasis on whitespace, transparency, and helvetica. 
 
 
+<a href="http://bogoli.github.io/-folio/">Live Demo</a>
+
 <hr/>
 
 
