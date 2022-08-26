@@ -841,7 +841,7 @@ ${math}
   }
 
   function author_string(ent, template, sep, finalSep) {
-    if (ent.author == null) {
+    if (ent.author === null) {
       return "";
     }
     var names = ent.author.split(" and ");
@@ -907,7 +907,7 @@ ${math}
     if ("url" in ent) {
       var url = ent.url;
       var arxiv_match = /arxiv\.org\/abs\/([0-9\.]*)/.exec(url);
-      if (arxiv_match != null) {
+      if (arxiv_match !== null) {
         url = `http://arxiv.org/pdf/${arxiv_match[1]}.pdf`;
       }
 
@@ -1705,7 +1705,7 @@ d-appendix > distill-appendix {
           };
 
           this.match = function(s, canCommentOut) {
-              if (canCommentOut == undefined || canCommentOut == null)
+              if (canCommentOut == undefined || canCommentOut === null)
                   canCommentOut = true;
               this.skipWhitespace(canCommentOut);
               if (this.input.substring(this.pos, this.pos + s.length) == s) {
@@ -1717,7 +1717,7 @@ d-appendix > distill-appendix {
           };
 
           this.tryMatch = function(s, canCommentOut) {
-              if (canCommentOut == undefined || canCommentOut == null)
+              if (canCommentOut == undefined || canCommentOut === null)
                   canCommentOut = true;
               this.skipWhitespace(canCommentOut);
               if (this.input.substring(this.pos, this.pos + s.length) == s) {
@@ -5007,8 +5007,8 @@ p small {
     if (compare.length === 1) compare = ascendingComparator(compare);
     return {
       left: function(a, x, lo, hi) {
-        if (lo == null) lo = 0;
-        if (hi == null) hi = a.length;
+        if (lo === null) lo = 0;
+        if (hi === null) hi = a.length;
         while (lo < hi) {
           var mid = lo + hi >>> 1;
           if (compare(a[mid], x) < 0) lo = mid + 1;
@@ -5017,8 +5017,8 @@ p small {
         return lo;
       },
       right: function(a, x, lo, hi) {
-        if (lo == null) lo = 0;
-        if (hi == null) hi = a.length;
+        if (lo === null) lo = 0;
+        if (hi === null) hi = a.length;
         while (lo < hi) {
           var mid = lo + hi >>> 1;
           if (compare(a[mid], x) > 0) hi = mid;
@@ -5353,7 +5353,7 @@ p small {
   }
 
   function rgb(r, g, b, opacity) {
-    return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+    return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity === null ? 1 : opacity);
   }
 
   function Rgb(r, g, b, opacity) {
@@ -5365,11 +5365,11 @@ p small {
 
   define(Rgb, rgb, extend(Color, {
     brighter: function(k) {
-      k = k == null ? brighter : Math.pow(brighter, k);
+      k = k === null ? brighter : Math.pow(brighter, k);
       return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
     },
     darker: function(k) {
-      k = k == null ? darker : Math.pow(darker, k);
+      k = k === null ? darker : Math.pow(darker, k);
       return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
     },
     rgb: function() {
@@ -5439,7 +5439,7 @@ p small {
   }
 
   function hsl(h, s, l, opacity) {
-    return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+    return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity === null ? 1 : opacity);
   }
 
   function Hsl(h, s, l, opacity) {
@@ -5451,11 +5451,11 @@ p small {
 
   define(Hsl, hsl, extend(Color, {
     brighter: function(k) {
-      k = k == null ? brighter : Math.pow(brighter, k);
+      k = k === null ? brighter : Math.pow(brighter, k);
       return new Hsl(this.h, this.s, this.l * k, this.opacity);
     },
     darker: function(k) {
-      k = k == null ? darker : Math.pow(darker, k);
+      k = k === null ? darker : Math.pow(darker, k);
       return new Hsl(this.h, this.s, this.l * k, this.opacity);
     },
     rgb: function() {
@@ -5523,7 +5523,7 @@ p small {
   }
 
   function lab(l, a, b, opacity) {
-    return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+    return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity === null ? 1 : opacity);
   }
 
   function Lab(l, a, b, opacity) {
@@ -5535,10 +5535,10 @@ p small {
 
   define(Lab, lab, extend(Color, {
     brighter: function(k) {
-      return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+      return new Lab(this.l + K * (k === null ? 1 : k), this.a, this.b, this.opacity);
     },
     darker: function(k) {
-      return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+      return new Lab(this.l - K * (k === null ? 1 : k), this.a, this.b, this.opacity);
     },
     rgb: function() {
       var y = (this.l + 16) / 116,
@@ -5581,7 +5581,7 @@ p small {
   }
 
   function hcl(h, c, l, opacity) {
-    return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+    return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity === null ? 1 : opacity);
   }
 
   function Hcl(h, c, l, opacity) {
@@ -5599,10 +5599,10 @@ p small {
 
   define(Hcl, hcl, extend(Color, {
     brighter: function(k) {
-      return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
+      return new Hcl(this.h, this.c, this.l + K * (k === null ? 1 : k), this.opacity);
     },
     darker: function(k) {
-      return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
+      return new Hcl(this.h, this.c, this.l - K * (k === null ? 1 : k), this.opacity);
     },
     rgb: function() {
       return hcl2lab(this).rgb();
@@ -5633,7 +5633,7 @@ p small {
   }
 
   function cubehelix(h, s, l, opacity) {
-    return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+    return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity === null ? 1 : opacity);
   }
 
   function Cubehelix(h, s, l, opacity) {
@@ -5645,11 +5645,11 @@ p small {
 
   define(Cubehelix, cubehelix, extend(Color, {
     brighter: function(k) {
-      k = k == null ? brighter : Math.pow(brighter, k);
+      k = k === null ? brighter : Math.pow(brighter, k);
       return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
     },
     darker: function(k) {
-      k = k == null ? darker : Math.pow(darker, k);
+      k = k === null ? darker : Math.pow(darker, k);
       return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
     },
     rgb: function() {
@@ -5849,7 +5849,7 @@ p small {
 
   function interpolate(a, b) {
     var t = typeof b, c;
-    return b == null || t === "boolean" ? constant(b)
+    return b === null || t === "boolean" ? constant(b)
         : (t === "number" ? interpolateNumber
         : t === "string" ? ((c = color(b)) ? (b = c, rgb$1) : string)
         : b instanceof color ? rgb$1
@@ -6323,11 +6323,11 @@ p small {
   function tickFormat(start, stop, count, specifier) {
     var step = tickStep(start, stop, count),
         precision;
-    specifier = formatSpecifier(specifier == null ? ",f" : specifier);
+    specifier = formatSpecifier(specifier === null ? ",f" : specifier);
     switch (specifier.type) {
       case "s": {
         var value = Math.max(Math.abs(start), Math.abs(stop));
-        if (specifier.precision == null && !isNaN(precision = precisionPrefix(step, value))) specifier.precision = precision;
+        if (specifier.precision === null && !isNaN(precision = precisionPrefix(step, value))) specifier.precision = precision;
         return formatPrefix(specifier, value);
       }
       case "":
@@ -6335,12 +6335,12 @@ p small {
       case "g":
       case "p":
       case "r": {
-        if (specifier.precision == null && !isNaN(precision = precisionRound(step, Math.max(Math.abs(start), Math.abs(stop))))) specifier.precision = precision - (specifier.type === "e");
+        if (specifier.precision === null && !isNaN(precision = precisionRound(step, Math.max(Math.abs(start), Math.abs(stop))))) specifier.precision = precision - (specifier.type === "e");
         break;
       }
       case "f":
       case "%": {
-        if (specifier.precision == null && !isNaN(precision = precisionFixed(step))) specifier.precision = precision - (specifier.type === "%") * 2;
+        if (specifier.precision === null && !isNaN(precision = precisionFixed(step))) specifier.precision = precision - (specifier.type === "%") * 2;
         break;
       }
     }
@@ -6352,16 +6352,16 @@ p small {
 
     scale.ticks = function(count) {
       var d = domain();
-      return ticks(d[0], d[d.length - 1], count == null ? 10 : count);
+      return ticks(d[0], d[d.length - 1], count === null ? 10 : count);
     };
 
     scale.tickFormat = function(count, specifier) {
       var d = domain();
-      return tickFormat(d[0], d[d.length - 1], count == null ? 10 : count, specifier);
+      return tickFormat(d[0], d[d.length - 1], count === null ? 10 : count, specifier);
     };
 
     scale.nice = function(count) {
-      if (count == null) count = 10;
+      if (count === null) count = 10;
 
       var d = domain(),
           i0 = 0,
@@ -6439,13 +6439,13 @@ p small {
     };
 
     interval.offset = function(date, step) {
-      return offseti(date = new Date(+date), step == null ? 1 : Math.floor(step)), date;
+      return offseti(date = new Date(+date), step === null ? 1 : Math.floor(step)), date;
     };
 
     interval.range = function(start, stop, step) {
       var range = [], previous;
       start = interval.ceil(start);
-      step = step == null ? 1 : Math.floor(step);
+      step = step === null ? 1 : Math.floor(step);
       if (!(start < stop) || !(step > 0)) return range; // also handles Invalid Date
       do range.push(previous = new Date(+start)), offseti(start, step), floori(start);
       while (previous < start && start < stop);
@@ -6853,7 +6853,7 @@ p small {
         while (++i < n) {
           if (specifier.charCodeAt(i) === 37) {
             string.push(specifier.slice(j, i));
-            if ((pad = pads[c = specifier.charAt(++i)]) != null) c = specifier.charAt(++i);
+            if ((pad = pads[c = specifier.charAt(++i)]) !== null) c = specifier.charAt(++i);
             else pad = c === "e" ? " " : "0";
             if (format = formats[c]) c = format(date, pad);
             string.push(c);
@@ -7424,10 +7424,10 @@ p small {
 
       // If a type was specified, set the callback for the given type and name.
       // Otherwise, if a null callback was specified, remove callbacks of the given name.
-      if (callback != null && typeof callback !== "function") throw new Error("invalid callback: " + callback);
+      if (callback !== null && typeof callback !== "function") throw new Error("invalid callback: " + callback);
       while (++i < n) {
         if (t = (typename = T[i]).type) _[t] = set(_[t], typename.name, callback);
-        else if (callback == null) for (t in _) _[t] = set(_[t], typename.name, null);
+        else if (callback === null) for (t in _) _[t] = set(_[t], typename.name, null);
       }
 
       return this;
@@ -7463,7 +7463,7 @@ p small {
         break;
       }
     }
-    if (callback != null) type.push({name: name, value: callback});
+    if (callback !== null) type.push({name: name, value: callback});
     return type;
   }
 
@@ -7509,7 +7509,7 @@ p small {
   function none() {}
 
   function selector(selector) {
-    return selector == null ? none : function() {
+    return selector === null ? none : function() {
       return this.querySelector(selector);
     };
   }
@@ -7534,7 +7534,7 @@ p small {
   }
 
   function selectorAll(selector) {
-    return selector == null ? empty : function() {
+    return selector === null ? empty : function() {
       return this.querySelectorAll(selector);
     };
   }
@@ -7726,8 +7726,8 @@ p small {
   function selection_join(onenter, onupdate, onexit) {
     var enter = this.enter(), update = this, exit = this.exit();
     enter = typeof onenter === "function" ? onenter(enter) : enter.append(onenter + "");
-    if (onupdate != null) update = onupdate(update);
-    if (onexit == null) exit.remove(); else onexit(exit);
+    if (onupdate !== null) update = onupdate(update);
+    if (onexit === null) exit.remove(); else onexit(exit);
     return enter && update ? enter.merge(update).order() : update;
   }
 
@@ -7858,7 +7858,7 @@ p small {
   function attrFunction(name, value) {
     return function() {
       var v = value.apply(this, arguments);
-      if (v == null) this.removeAttribute(name);
+      if (v === null) this.removeAttribute(name);
       else this.setAttribute(name, v);
     };
   }
@@ -7866,7 +7866,7 @@ p small {
   function attrFunctionNS(fullname, value) {
     return function() {
       var v = value.apply(this, arguments);
-      if (v == null) this.removeAttributeNS(fullname.space, fullname.local);
+      if (v === null) this.removeAttributeNS(fullname.space, fullname.local);
       else this.setAttributeNS(fullname.space, fullname.local, v);
     };
   }
@@ -7881,7 +7881,7 @@ p small {
           : node.getAttribute(fullname);
     }
 
-    return this.each((value == null
+    return this.each((value === null
         ? (fullname.local ? attrRemoveNS : attrRemove) : (typeof value === "function"
         ? (fullname.local ? attrFunctionNS : attrFunction)
         : (fullname.local ? attrConstantNS : attrConstant)))(fullname, value));
@@ -7908,17 +7908,17 @@ p small {
   function styleFunction(name, value, priority) {
     return function() {
       var v = value.apply(this, arguments);
-      if (v == null) this.style.removeProperty(name);
+      if (v === null) this.style.removeProperty(name);
       else this.style.setProperty(name, v, priority);
     };
   }
 
   function selection_style(name, value, priority) {
     return arguments.length > 1
-        ? this.each((value == null
+        ? this.each((value === null
               ? styleRemove : typeof value === "function"
               ? styleFunction
-              : styleConstant)(name, value, priority == null ? "" : priority))
+              : styleConstant)(name, value, priority === null ? "" : priority))
         : styleValue(this.node(), name);
   }
 
@@ -7942,14 +7942,14 @@ p small {
   function propertyFunction(name, value) {
     return function() {
       var v = value.apply(this, arguments);
-      if (v == null) delete this[name];
+      if (v === null) delete this[name];
       else this[name] = v;
     };
   }
 
   function selection_property(name, value) {
     return arguments.length > 1
-        ? this.each((value == null
+        ? this.each((value === null
             ? propertyRemove : typeof value === "function"
             ? propertyFunction
             : propertyConstant)(name, value))
@@ -8045,13 +8045,13 @@ p small {
   function textFunction(value) {
     return function() {
       var v = value.apply(this, arguments);
-      this.textContent = v == null ? "" : v;
+      this.textContent = v === null ? "" : v;
     };
   }
 
   function selection_text(value) {
     return arguments.length
-        ? this.each(value == null
+        ? this.each(value === null
             ? textRemove : (typeof value === "function"
             ? textFunction
             : textConstant)(value))
@@ -8071,13 +8071,13 @@ p small {
   function htmlFunction(value) {
     return function() {
       var v = value.apply(this, arguments);
-      this.innerHTML = v == null ? "" : v;
+      this.innerHTML = v === null ? "" : v;
     };
   }
 
   function selection_html(value) {
     return arguments.length
-        ? this.each(value == null
+        ? this.each(value === null
             ? htmlRemove : (typeof value === "function"
             ? htmlFunction
             : htmlConstant)(value))
@@ -8113,7 +8113,7 @@ p small {
 
   function selection_insert(name, before) {
     var create = typeof name === "function" ? name : creator(name),
-        select = before == null ? constantNull : typeof before === "function" ? before : selector(before);
+        select = before === null ? constantNull : typeof before === "function" ? before : selector(before);
     return this.select(function() {
       return this.insertBefore(create.apply(this, arguments), select.apply(this, arguments) || null);
     });
@@ -8240,7 +8240,7 @@ p small {
     }
 
     on = value ? onAdd : onRemove;
-    if (capture == null) capture = false;
+    if (capture === null) capture = false;
     for (i = 0; i < n; ++i) this.each(on(typenames[i], value, capture));
     return this;
   }
@@ -8448,7 +8448,7 @@ p small {
   }
 
   function defaultSubject(d) {
-    return d == null ? {x: event.x, y: event.y} : d;
+    return d === null ? {x: event.x, y: event.y} : d;
   }
 
   function defaultTouchable() {
@@ -8554,7 +8554,7 @@ p small {
           sublisteners = listeners.copy();
 
       if (!customEvent(new DragEvent(drag, "beforestart", s, id, active, p[0], p[1], 0, 0, sublisteners), function() {
-        if ((event.subject = s = subject.apply(that, args)) == null) return false;
+        if ((event.subject = s = subject.apply(that, args)) === null) return false;
         dx = s.x - p[0] || 0;
         dy = s.y - p[1] || 0;
         return true;

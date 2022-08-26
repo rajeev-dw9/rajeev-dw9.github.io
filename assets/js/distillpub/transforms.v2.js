@@ -478,7 +478,7 @@
           };
 
           this.match = function(s, canCommentOut) {
-              if (canCommentOut == undefined || canCommentOut == null)
+              if (canCommentOut == undefined || canCommentOut === null)
                   canCommentOut = true;
               this.skipWhitespace(canCommentOut);
               if (this.input.substring(this.pos, this.pos + s.length) == s) {
@@ -490,7 +490,7 @@
           };
 
           this.tryMatch = function(s, canCommentOut) {
-              if (canCommentOut == undefined || canCommentOut == null)
+              if (canCommentOut == undefined || canCommentOut === null)
                   canCommentOut = true;
               this.skipWhitespace(canCommentOut);
               if (this.input.substring(this.pos, this.pos + s.length) == s) {
@@ -833,7 +833,7 @@
   }
 
   function author_string(ent, template, sep, finalSep) {
-    if (ent.author == null) {
+    if (ent.author === null) {
       return "";
     }
     var names = ent.author.split(" and ");
@@ -899,7 +899,7 @@
     if ("url" in ent) {
       var url = ent.url;
       var arxiv_match = /arxiv\.org\/abs\/([0-9\.]*)/.exec(url);
-      if (arxiv_match != null) {
+      if (arxiv_match !== null) {
         url = `http://arxiv.org/pdf/${arxiv_match[1]}.pdf`;
       }
 
@@ -1513,7 +1513,7 @@
     var match = reloc.exec(str);
     // Last capturing group is our sentinel that indicates whether the regex
     // matched at the given location.
-    if (match[match.length - 1] == null) {
+    if (match[match.length - 1] === null) {
       // Original regex matched.
       match.length = match.length - 1;
       return match;
@@ -2843,7 +2843,7 @@
           value: function parseImplicitGroup() {
               var start = this.parseSymbol();
 
-              if (start == null) {
+              if (start === null) {
                   // If we didn't get anything we handle, fall back to parseFunction
                   return this.parseFunction();
               }
@@ -4559,12 +4559,12 @@
 
       var leftDelim = void 0;
       var rightDelim = void 0;
-      if (group.value.leftDelim == null) {
+      if (group.value.leftDelim === null) {
           leftDelim = makeNullDelimiter(options, ["mopen"]);
       } else {
           leftDelim = _delimiter2.default.customSizedDelim(group.value.leftDelim, delimSize, true, options.havingStyle(style), group.mode, ["mopen"]);
       }
-      if (group.value.rightDelim == null) {
+      if (group.value.rightDelim === null) {
           rightDelim = makeNullDelimiter(options, ["mclose"]);
       } else {
           rightDelim = _delimiter2.default.customSizedDelim(group.value.rightDelim, delimSize, true, options.havingStyle(style), group.mode, ["mclose"]);
@@ -5804,7 +5804,7 @@
       var currentText = null;
       for (var i = 0; i < body.length; i++) {
           var _group = buildGroup(body[i], options);
-          if (_group.type === 'mtext' && currentText != null) {
+          if (_group.type === 'mtext' && currentText !== null) {
               Array.prototype.push.apply(currentText.children, _group.children);
           } else {
               inner.push(_group);
@@ -5887,10 +5887,10 @@
           node.setAttribute("linethickness", "0px");
       }
 
-      if (group.value.leftDelim != null || group.value.rightDelim != null) {
+      if (group.value.leftDelim !== null || group.value.rightDelim !== null) {
           var withDelims = [];
 
-          if (group.value.leftDelim != null) {
+          if (group.value.leftDelim !== null) {
               var leftOp = new _mathMLTree2.default.MathNode("mo", [new _mathMLTree2.default.TextNode(group.value.leftDelim)]);
 
               leftOp.setAttribute("fence", "true");
@@ -5900,7 +5900,7 @@
 
           withDelims.push(node);
 
-          if (group.value.rightDelim != null) {
+          if (group.value.rightDelim !== null) {
               var rightOp = new _mathMLTree2.default.MathNode("mo", [new _mathMLTree2.default.TextNode(group.value.rightDelim)]);
 
               rightOp.setAttribute("fence", "true");
@@ -11816,7 +11816,7 @@
    */
   var nativeIndexOf = Array.prototype.indexOf;
   var indexOf = function indexOf(list, elem) {
-      if (list == null) {
+      if (list === null) {
           return -1;
       }
       if (nativeIndexOf && list.indexOf === nativeIndexOf) {
