@@ -174,7 +174,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
         <article>
           <div class="publications">
-            <h2 class="year">{YEAR}</h2>
+            <!-- Publication Template -->
+            <h2 class="year">2024</h2>
             <ol class="bibliography">
               <li>
                 <div class="row">
@@ -184,23 +185,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </div>
                   </div>
                   <div class="col-sm-7">
-                    <div class="title">{TITLE}</div>
+                    <div class="title">CosFairNet:A Parameter-Space based Approach for Bias Free Learning</div>
                     <div class="author">
-                      <em>{AUTHOR_1}</em>,
-                      <em>{AUTHOR_2}</em>,
-                      ... </div>
+                      <em>Rajeev Ranjan Dwivedi</em>,
+                      Priyadarshni Kumari,
+                      Vinod K Kurmi
+                    </div>
                     <div class="periodical">
-                      <em>{PUBLICATION}</em>, {VOLUME} ({YEAR})
+                      <em>British Machine Vision Conference (BMVC), (2024)</em>
                     </div>
                     <div class="links">
                       <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
                       <a href="{URL}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
-                      <a class="conference btn-sm z-depth-0" role="button">{CONFERENCE}</a>
+                      <a class="conference btn-sm z-depth-0" role="button">BMVC</a>
                     </div>
+                    <!-- Hidden abstract block -->
+                    <div class="abstract hidden">
+                      <p>Deep neural networks trained on biased data often inadvertently learn unintended inference rules, particularly when labels are strongly correlated with biased features. Existing bias mitigation methods typically involve either a) predefining bias types and enforcing them as prior knowledge or b) reweighting training samples to emphasize bias-conflicting samples over bias-aligned samples. However, both strategies address bias indirectly in the feature or sample space, with no control over learned weights, making it difficult to control the bias propagation across different layers. Based on this observation, we introduce a novel approach to address bias directly in the model's parameter space, preventing its propagation across layers. Our method involves training two models: a bias model for biased features and a debias model for unbiased details, guided by the bias model. We enforce dissimilarity in the debias model's later layers and similarity in its initial layers with the bias model, ensuring it learns unbiased low-level features without adopting biased high-level abstractions. By incorporating this explicit constraint during training, our approach shows enhanced classification accuracy and debiasing effectiveness across various synthetic and real-world datasets of different sizes. Moreover, the proposed method demonstrates robustness across different bias types and percentages of biased samples in the training data.</p>
                     </div>
+
                 </div>
               </li>
             </ol>
+            <!-- Publication Template -->
+
           </div>
         </article>
       </div>
