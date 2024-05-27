@@ -116,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <!-- About -->
           <li class="nav-item ">
             <a class="nav-link" href="/">
-              about
+              About
               
             </a>
           </li>
@@ -174,8 +174,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
         <article>
           <div class="publications">
-            <li></li>
-            <li></li>
+            <h2 class="year">{YEAR}</h2>
+            <ol class="bibliography">
+              <li>
+                <div class="row">
+                  <div class="col-sm-3 abbr">
+                    <div class="float-left">
+                      <img class="img-fluid" src="/assets/img/{IMAGE}" alt="Publication Image" />
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="title">{TITLE}</div>
+                    <div class="author">
+                      <em>{AUTHOR_1}</em>,
+                      <em>{AUTHOR_2}</em>,
+                      ... </div>
+                    <div class="periodical">
+                      <em>{PUBLICATION}</em>, {VOLUME} ({YEAR})
+                    </div>
+                    <div class="links">
+                      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+                      <a href="{URL}" class="btn btn-sm z-depth-0" role="button" target="_blank">HTML</a>
+                      <a class="conference btn-sm z-depth-0" role="button">{CONFERENCE}</a>
+                    </div>
+                    </div>
+                </div>
+              </li>
+            </ol>
           </div>
         </article>
       </div>
