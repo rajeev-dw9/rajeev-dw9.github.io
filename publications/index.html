@@ -145,7 +145,7 @@
                                         <a href="https://wacv.thecvf.com/Conferences/2026" class="btn btn-sm z-depth-0" role="button">WACV '26</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>We present HAQAGen, a unified generative model for resolution-invariant NIR-to-RGB colorization...</p>
+                                        <p>We present HAQAGen, a unified generative model for resolution-invariant NIR-to-RGB colorization that balances chromatic realism with structural fidelity. The proposed model introduces (i) a combined loss term aligning the global color statistics through differentiable histogram matching, perceptual image quality measure, and feature-based similarity to preserve texture information, (ii) local hue-saturation priors injected via Spatially Adaptive Denormalization (SPADE) to stabilize chromatic reconstruction, and (iii) texture-aware supervision within a Mamba backbone to preserve fine details. We introduce an adaptive-resolution inference engine that further enables high-resolution translation without sacrificing quality. Our proposed NIR-to-RGB translation model simultaneously enforces global color statistics and local chromatic consistency, while scaling to native resolutions without compromising texture fidelity or generalization. Extensive evaluations on FANVID, OMSIV, VCIP2020, and RGB2NIR using different evaluation metrics demonstrate consistent improvements over state-of-the-art baseline methods. HAQAGen produces images with sharper textures, natural colors, attaining significant gains as per perceptual metrics. These results position HAQAGen as a scalable and effective solution for NIR-to-RGB translation across diverse imaging scenarios.</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                         <a href="https://ecai2025.org/" class="btn btn-sm z-depth-0" role="button">ECAI '25</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Real-world images frequently exhibit multiple overlapping biases...</p>
+                                        <p>Real-world images frequently exhibit multiple overlapping biases, including textures, watermarks, gendered makeup, scene-object pairings, etc. These biases collectively impair the performance of modern vision models, undermining both their robustness and fairness. Addressing these biases individually proves inadequate, as mitigating one bias often permits or intensifies others.  We tackle this multi-bias problem with Generalized Multi-Bias Mitigation (GMBM), a lean two-stage framework that needs group labels only while training and minimizes bias at test time. First, Adaptive Bias-Integrated Learning (ABIL) deliberately identifies the influence of known shortcuts by training encoders for each attribute and integrating them with the main backbone, compelling the classifier to explicitly recognize these biases. Then Gradient-Suppression Fine-Tuning prunes those very bias directions from the backbone’s gradients, leaving a single compact network that ignores all the shortcuts it just learned to recognize. Moreover we find that existing bias metrics break under subgroup imbalance and train-test distribution shifts, so we introduce Scaled Bias Amplification (SBA): a test-time measure that disentangles model-induced bias amplification from distributional differences. We validate GMBM on FB-CMNIST, CelebA, and COCO, where we boost worst-group accuracy, halve multi-attribute bias amplification, and set a new low in SBA—even as bias complexity and distribution shifts intensify—making GMBM the first practical, end-to-end multi-bias solution for visual recognition.</p>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                         <a class="conference btn-sm z-depth-0" role="button">ICVGIP'25</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Deep learning models for skin‑lesion classification often underperform on darker skin tones...</p>
+                                        <p> Deep learning models for skin-lesion classification often underperform on darker skin tones, leading to diagnostic inequity. We propose a unified framework that combines adversarial debiasing via a Gradient Reversal Layer to remove skin-tone information from feature representations and an Elastic Representation (ElRep) regularizer to learn robust, disentangled lesion features. By jointly optimizing lesion classification and skin-tone prediction losses, our composite objective encourages the encoder to focus on lesion morphology rather than background. Evaluated on the large-scale Fitzpatrick-17k and ISIC2020 datasets, our approach achieves significant improvement in overall accuracy and worst-group accuracy over standard empirical risk minimization, while maintaining fast and stable convergence. Qualitative t-SNE and Grad-CAM analyses confirm that our model learns lesion‑focused embeddings across all skin types, offering a practical, reproducible path toward more equitable AI-driven dermatology.</p>
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                                         <a class="conference btn-sm z-depth-0" role="button">BMVC '25</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Accurate segmentation of the optic disc and cup is critical...</p>
+                                        <p> Accurate segmentation of the optic disc and cup is critical for the early diagnosis and management of ocular diseases such as glaucoma. However, segmentation models trained on one dataset often suffer significant performance degradation when applied to target data acquired under different imaging protocols or conditions. To address this challenge, we propose Grad-CL, a novel source-free domain adaptation framework that leverages a pre-trained source model and unlabeled target data to robustly adapt segmentation performance without requiring access to the original source data. Grad-CL combines a gradient-guided pseudolabel refinement module with a cosine similarity based contrastive learning strategy. In the first stage, salient class-specific features are extracted via a gradient-based mechanism, enabling more accurate uncertainty quantification and robust prototype estimation for refining noisy pseudolabels. In the second stage, a contrastive loss based on cosine similarity is employed to explicitly enforce inter-class separability between the gradient-informed features of the optic cup and disc. Extensive experiments on challenging cross-domain fundus imaging datasets demonstrate that Grad-CL outperforms state-of-the-art unsupervised and source-free domain adaptation methods, achieving superior segmentation accuracy and improved boundary delineation.</p>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +259,7 @@
                                         <a class="conference btn-sm z-depth-0" role="button">BMVC '24</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Deep neural networks trained on biased data often inadvertently learn unintended inference rules...</p>
+                                        <p>Deep neural networks trained on biased data often inadvertently learn unintended inference rules, particularly when labels are strongly correlated with biased features. Existing bias mitigation methods typically involve either a) predefining bias types and enforcing them as prior knowledge or b) reweighting training samples to emphasize bias-conflicting samples over bias-aligned samples. However, both strategies address bias indirectly in the feature or sample space, with no control over learned weights, making it difficult to control the bias propagation across different layers. Based on this observation, we introduce a novel approach to address bias directly in the model's parameter space, preventing its propagation across layers. Our method involves training two models: a bias model for biased features and a debias model for unbiased details, guided by the bias model. We enforce dissimilarity in the debias model's later layers and similarity in its initial layers with the bias model, ensuring it learns unbiased low-level features without adopting biased high-level abstractions. By incorporating this explicit constraint during training, our approach shows enhanced classification accuracy and debiasing effectiveness across various synthetic and real-world datasets of different sizes. Moreover, the proposed method demonstrates robustness across different bias types and percentages of biased samples in the training data.</p>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@
                                         <a class="conference btn-sm z-depth-0" role="button">CIKM '24</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Regression models are of fundamental importance in explicitly explaining the response variable...</p>
+                                        <p>Regression models are of fundamental importance in explicitly explaining the response variable in terms of covariates. Heteroscedasticity is common in most real-world scenarios and is hard to model due to its randomness. The Gaussian process generally captures epistemic (model) uncertainty but fails to capture heteroscedastic aleatoric uncertainty. The framework of Heteroscedastic Gaussian Process (HetGP) inherently captures both epistemic and aleatoric by placing independent Gaussian processes on both mean function and error term.  In this work, we propose the posthoc HetGP on the residuals of the trained neural network to obtain both epistemic and aleatoric uncertainty. The advantage of posthoc HetGP on residuals is that it can be extended to any type of model, since the model is assumed to be black-box that gives point predictions. We demonstrate our approach through simulation studies on UCI regression datasets.</p>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +316,7 @@
                                         <a class="conference btn-sm z-depth-0" role="button">arXiv '23</a>
                                     </div>
                                     <div class="abstract hidden">
-                                        <p>Gamma-ray bursts (GRB) are powerful transient events...</p>
+                                        <p>Gamma-ray bursts (GRB) are powerful transient events that emit a large output of gamma rays within a few seconds. Studying these short bursts is vital for cosmological research since they originate from sources observed at large redshifts. To effectively carry out these studies, it is crucial to establish a correlation between the observable features of GRBs while reducing their uncertainty. For these reasons, a comprehensive description of the general GRB light curve (LC) would be crucial for the studies. However, unevenly spaced observations and significant gaps in the LC, which are primarily unavoidable for various reasons, make it difficult to characterize GRBs. Therefore, the general classification of GRB LCs remains challenging. In this study, we present a novel approach to reconstruct gamma-ray burst (GRB) light curves using bidirectional Long Short-Term Memory (BiLSTM). Experimental results show that the BiLSTM approach performs better than traditional methods and produces smoother and more convincing reconstructions for GRBs.</p>
                                     </div>
                                 </div>
                             </div>
