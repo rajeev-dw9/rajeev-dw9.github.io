@@ -351,12 +351,14 @@ footer.sticky-bottom {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color); }
         .publications ol.bibliography li .links a.core-star {
-          color: #c00;
-          border-color: #c00;
+          color: #c45c6a;
+          border-color: #f3b4bc;
+          background-color: #fdecee;
           font-weight: 600; }
           .publications ol.bibliography li .links a.core-star:hover {
-            color: #c00;
-            border-color: #c00; }
+            color: #c45c6a;
+            border-color: #e8949e;
+            background-color: #fadbe0; }
         .publications ol.bibliography li .periodical a {
           font-weight: 400; }
         .publications ol.bibliography li .hidden {
