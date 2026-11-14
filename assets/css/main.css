@@ -261,7 +261,9 @@ main { counter-reset: sec; }
 .pub h3 a { color: var(--text); }
 .pub h3 a:hover { color: var(--link); }
 .pub .authors { margin: 0; font-size: 17px; }
-.pub .authors .me { font-weight: 700; }
+.pub .authors .me { font-weight: 700; color: var(--link); }
+.pub .authors a { color: inherit; text-decoration: underline dotted; text-decoration-color: #9a9a9a; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.pub .authors a:hover { color: var(--link); text-decoration-style: solid; text-decoration-color: currentColor; }
 .pub .where { margin: .05rem 0 0; font-size: 17px; font-style: italic; }
 .pub .where a { color: inherit; }
 
